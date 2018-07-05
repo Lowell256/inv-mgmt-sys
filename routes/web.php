@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'LoginController@index');
+Route::post('/xD', 'LoginController@login');
