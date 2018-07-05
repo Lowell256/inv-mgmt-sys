@@ -11,5 +11,12 @@
 |
 */
 
-Route::get('/', 'LoginController@index');
-Route::post('/xD', 'LoginController@login');
+Route::get('/', 'LoginController@index')->name('login_page');
+Route::post('/', 'LoginController@login');
+Route::get('/land','LoginController@land')->name('land');
+Route::get('/logout','LoginController@logout')->name('logout');
+
+// Root
+Route::prefix('root')->middleware(['root_middleware'])->group(function () {
+    Route::get('/index', 'RootController@index')->name('root_index');
+});
