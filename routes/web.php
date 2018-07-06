@@ -26,3 +26,9 @@ Route::middleware(['logged_middleware'])->group(function () {
 Route::prefix('root')->middleware(['root_middleware'])->group(function () {
     Route::get('/index', 'RootController@index')->name('root_index');
 });
+
+//Suppliers
+Route::get('/suppliers/add', 'SupplyController@add_supplier')->name('supplier_add');
+
+//Regulars
+Route::get('/regulars/add', 'OrdersController@add_regular')->name('regular_add');
