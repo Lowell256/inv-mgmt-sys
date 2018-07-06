@@ -4,6 +4,6 @@
 .btn{
     float: right;
 }
-.navbar{
-    color:#fafafa;
+.nav-active{
+    background-color:#212121;
 }

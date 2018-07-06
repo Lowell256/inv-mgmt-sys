@@ -71,6 +71,6 @@ class PublicController extends Controller
     }
 
     public function own_profile(){
-            return "own_profile";
+            return view('public_layouts.profile');
     }
 }

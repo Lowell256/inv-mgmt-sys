@@ -1,8 +1,4 @@
-@extends('base_layouts.base_root')
-
-@section('home_active')
-active
-@endsection
+@extends('base_layouts.base')
 
 @section('content')
     <div class="jumbotron">
