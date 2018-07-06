@@ -17,7 +17,7 @@
         <ul class="sidebar-nav">
             <hr>
             <li class=" waves-effect">
-            <a href=""><i class="far fa-user-circle fa-2x" style="margin:10px;"></i>{{ session('user_name') }}</a>
+            <a href="{{ route('own_profile') }}"><i class="far fa-user-circle fa-2x" style="margin:10px;"></i>{{ session('user_name') }}</a>
             </li>
             <hr>
             <li>
@@ -44,7 +44,7 @@
             </div>
         </nav>
 <div id="page-content-wrapper">
-    <div class="jumbotron" ></div>
+    @yield('content')
 </div>
 </div>
 <script type="text/javascript" src="{{ asset('js/jquery331.js') }}"></script>

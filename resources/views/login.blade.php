@@ -9,7 +9,7 @@
     </div>
         <div class="card-body">
             @include('base_layouts.messages')
-            {!! Form::open(['action' => 'LoginController@login', 'method' => 'POST']) !!}
+            {!! Form::open(['action' => 'PublicController@login', 'method' => 'POST']) !!}
                 <div class="md-form">
                     <i class="fas fa-user-circle prefix grey-text"></i>
                     <input name="username" type="text" class="form-control" required>

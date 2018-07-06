@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', 'LoginController@index')->name('login_page');
-Route::post('/', 'LoginController@login');
-Route::get('/land','LoginController@land')->name('land');
-Route::get('/logout','LoginController@logout')->name('logout');
+// Public
+Route::get('/', 'PublicController@index')->name('login_page');
+Route::post('/', 'PublicController@login');
+Route::get('/land','PublicController@land')->name('land');
+Route::get('/logout','PublicController@logout')->name('logout');
+Route::get('/profile','PublicController@own_profile')->name('own_profile');
 
 // Root
 Route::prefix('root')->middleware(['root_middleware'])->group(function () {

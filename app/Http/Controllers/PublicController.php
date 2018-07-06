@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Users_tbl;
 
-class LoginController extends Controller
+class PublicController extends Controller
 {
     public function index(Request $request){
         if (
@@ -68,5 +68,9 @@ class LoginController extends Controller
         else{
             return "else";
         }
+    }
+
+    public function own_profile(){
+            return "own_profile";
     }
 }
