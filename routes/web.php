@@ -16,7 +16,11 @@ Route::get('/', 'PublicController@index')->name('login_page');
 Route::post('/', 'PublicController@login');
 Route::get('/land','PublicController@land')->name('land');
 Route::get('/logout','PublicController@logout')->name('logout');
-Route::get('/profile','PublicController@own_profile')->name('own_profile');
+
+//Public with login
+Route::middleware(['logged_middleware'])->group(function () {
+    Route::get('/profile','PublicController@own_profile')->name('own_profile');
+});
 
 // Root
 Route::prefix('root')->middleware(['root_middleware'])->group(function () {

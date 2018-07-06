@@ -71,6 +71,11 @@ class PublicController extends Controller
     }
 
     public function own_profile(){
-            return view('public_layouts.profile');
+        $username = session()->get('user_type');
+        $user = Users_tbl::where('user_name', $username)
+        ->where('account_status',1)
+        ->first();
+
+        return view('public_layouts.profile')->with('user',$user);
     }
 }
