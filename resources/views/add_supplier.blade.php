@@ -7,7 +7,8 @@
         <h3><i class="far fa-plus-square fa-2x"></i> Add Supplier</h3>
     </div>
     <div class="card-body">
-        {!! Form::open(['action' => 'PublicController@login', 'method' => 'POST']) !!}
+        @include('base_layouts.messages')
+        {!! Form::open(['action' => 'SupplyController@add_supplier', 'method' => 'POST']) !!}
         <div class="md-form">
             <label>Supplier Name</label>
             <input name="supplier_name" type="text" class="form-control" required minlength="8" required>
@@ -28,11 +29,6 @@
             </div>
         </div>
         <br>
-        <div class="md-form">
-            <input name="email" type="email" class="form-control" required>
-            <label >Email</label>
-        </div>
-        <br>
         <h4>Contact One</h4>
          <div class="md-form row">
             <div class="col-sm-12 col-md-4">
@@ -45,7 +41,7 @@
             </div>
             <div class="col-sm-12 col-md-4">
                 <label class="labels" >Email</label>
-                <input name="c1_email" type="text" class="form-control" required>
+                <input name="c1_email" type="email" class="form-control" required>
             </div>
         </div>
         <br>
@@ -61,7 +57,7 @@
             </div>
             <div class="col-sm-12 col-md-4">
                 <label class="labels" >Email</label>
-                <input name="c2_email" type="text" class="form-control" required>
+                <input name="c2_email" type="email" class="form-control" required>
             </div>
         </div>
         <br>
@@ -77,7 +73,7 @@
             </div>
             <div class="col-sm-12 col-md-4">
                 <label class="labels" >Email</label>
-                <input name="c3_email" type="text" class="form-control" required>
+                <input name="c3_email" type="email" class="form-control" required>
             </div>
         </div>
         <br>      

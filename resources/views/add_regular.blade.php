@@ -6,7 +6,7 @@
         <h3><i class="fas fa-plus-square fa-2x"></i> Add Regular</h3>
     </div>
     <div class="card-body">
-        {!! Form::open(['action' => 'PublicController@login', 'method' => 'POST']) !!}
+        {!! Form::open(['action' => 'OrdersController@add_regular', 'method' => 'POST']) !!}
         <div class="md-form">
             <label>Customer Full Name</label>
             <input name="full_name" type="text" class="form-control" required minlength="8" required>
