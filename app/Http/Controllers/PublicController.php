@@ -71,11 +71,46 @@ class PublicController extends Controller
     }
 
     public function own_profile(){
-        $username = session()->get('user_type');
-        $user = Users_tbl::where('user_name', $username)
+        $userid = session()->get('user_id');
+        $user = Users_tbl::where('user_id', $userid)
         ->where('account_status',1)
         ->first();
 
         return view('public_layouts.profile')->with('user',$user);
+    }
+
+    public function update_profile(Request $request){
+        $userid = session()->get('user_id');
+        $user = Users_tbl::where('user_id', $userid)
+        ->update([
+            'user_name' => $request->input('user_name'),
+            'first_name' => $request->input('first_name'),
+            'middle_name' => $request->input('middle_name'),
+            'last_name' => $request->input('last_name'),
+            'gender' => $request->input('gender'),
+            'email' => $request->input('email')
+        ]);
+        $request->session()->forget('user_name');
+        $request->session()->put('user_name', $request->input('user_name'));
+        return redirect()->route('land');
+    }
+
+    public function change_password(Request $request){
+
+        $userid = session()->get('user_id');
+        $user = Users_tbl::select('password')
+        ->where('user_id', $userid)
+        ->first();
+
+        if (Hash::check($request->input('old_password'), $user->password)) {            
+            $user = Users_tbl::where('user_id', $userid)
+            ->update([
+                'password' => Hash::make($request->new_password)
+            ]);
+            return redirect()->route('own_profile')->with('success','Password Changed!');
+        }
+        else{
+            return redirect()->route('own_profile')->with('error','Wrong Password!');
+        }
     }
 }

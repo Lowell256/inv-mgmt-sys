@@ -23,11 +23,11 @@
             <hr>
             @if(session('user_type') === 0)
             <li class="@yield('settings_active') waves-effect">
-                <a href="{{ route('land') }}"><i class="fa fa-cogs fa-sm" style="margin:10px;"></i>Settings</a>
+                <a href=""><i class="fa fa-cogs fa-sm" style="margin:10px;"></i>Settings</a>
             </li>
             @endif
             <li class="@yield('dashboard_active') waves-effect">
-                <a href=""><i class="fa fa-columns fa-sm" style="margin:10px;"></i>Dashboard</a>
+                <a href="{{ route('land') }}"><i class="fa fa-columns fa-sm" style="margin:10px;"></i>Dashboard</a>
             </li>
             <li class="@yield('suppliers_active') waves-effect">
                 <a href=""><i class="fas fa-boxes fa-sm" style="margin:10px;"></i>Suppliers</a>

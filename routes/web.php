@@ -20,6 +20,8 @@ Route::get('/logout','PublicController@logout')->name('logout');
 //Public with login
 Route::middleware(['logged_middleware'])->group(function () {
     Route::get('/profile','PublicController@own_profile')->name('own_profile');
+    Route::post('/profile/update','PublicController@update_profile')->name('update_profile');
+    Route::post('/profile/change_password','PublicController@change_password')->name('change_password');
 });
 
 // Root

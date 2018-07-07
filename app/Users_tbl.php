@@ -8,5 +8,5 @@ class Users_tbl extends Model
 {
     protected $table = "users_tbl";
     protected $primaryKey = "user_id";
-    public $timestamps = false;
+    public $timestamps = true;
 }
