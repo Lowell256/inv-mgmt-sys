@@ -8,6 +8,7 @@
     <link href="{{ asset('fa/css/all.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('datatable/datatables.min.css') }}" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <link href="{{ asset('css/material-kit.min.css') }}" rel="stylesheet"/>
@@ -30,10 +31,10 @@
                 <a href="{{ route('land') }}"><i class="fa fa-columns fa-sm" style="margin:10px;"></i>Dashboard</a>
             </li>
             <li class="@yield('suppliers_active') waves-effect">
-                <a href=""><i class="fas fa-boxes fa-sm" style="margin:10px;"></i>Suppliers</a>
+                <a href="{{ route('suppliers_index') }}"><i class="fas fa-boxes fa-sm" style="margin:10px;"></i>Suppliers</a>
             </li>
             <li class="@yield('regulars_active') waves-effect">
-                <a href=""><i class="fa fa-address-book fa-sm" style="margin:10px;"></i>Regulars</a>
+                <a href="{{ route('regulars_index') }}"><i class="fa fa-address-book fa-sm" style="margin:10px;"></i>Regulars</a>
             </li>
             <li class="@yield('inventory_active') waves-effect">
                 <a href=""><i class="fa fa-sitemap fa-sm" style="margin:10px;"></i>Inventory</a>
@@ -52,14 +53,15 @@
     @yield('content')
 </div>
 </div>
-<script type="text/javascript" src="{{ asset('js/jquery331.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/material-kit.min.js') }}"></script>
+<script src="{{ asset('js/jquery-3.3.1.min.js') }}"  type="text/javascript"></script>
+<script src="{{ asset('js/material-kit.min.js') }}"  type="text/javascript" ></script>
 <script src="{{ asset('js/plugins/bootstrap-datetimepicker.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/plugins/nouislider.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/jquery.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/plugins/moment.min.js') }}"></script>
+<script src="{{ asset('datatable/datatables.min.js') }}"  type="text/javascript" ></script>
 @yield('script')
 <script>
 $("#menu-toggle").click(function(e) {

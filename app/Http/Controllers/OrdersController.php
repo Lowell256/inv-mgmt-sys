@@ -9,7 +9,8 @@ use DateTime;
 class OrdersController extends Controller
 {
     public function index(){
-        
+        $regulars = Regular_customers_tbl::all();
+        return view('regulars_index')->with('regulars', $regulars);
     }
 
     public function add_regular(Request $request){

@@ -9,7 +9,8 @@ use DateTime;
 class SupplyController extends Controller
 {
     public function index(){
-        
+        $suppliers = Suppliers_tbl::all();
+        return view('suppliers_index')->with('suppliers', $suppliers);
     }
 
     public function add_supplier(Request $request){

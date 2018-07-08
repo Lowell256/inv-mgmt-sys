@@ -30,9 +30,11 @@ Route::prefix('root')->middleware(['root_middleware'])->group(function () {
 });
 
 //Suppliers
+Route::get('/suppliers', 'SupplyController@index')->name('suppliers_index');
 Route::get('/suppliers/add', 'SupplyController@add_supplier')->name('supplier_add');
 Route::post('/suppliers/add', 'SupplyController@add_supplier')->name('supplier_add');
 
 //Regulars
+Route::get('/regulars', 'OrdersController@index')->name('regulars_index');
 Route::get('/regulars/add', 'OrdersController@add_regular')->name('regular_add');
 Route::post('/regulars/add', 'OrdersController@add_regular')->name('regular_add');
