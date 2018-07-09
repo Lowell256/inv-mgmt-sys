@@ -1,7 +1,5 @@
 @extends('base_layouts.base')
-
 @section('content')
-@include('base_layouts.messages')
 <div class="card margin-jumbotron">
     <div class="card-header card-header-primary">
         <h3><i class="far fa-plus-square fa-2x"></i> Add Supplier</h3>

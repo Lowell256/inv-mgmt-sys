@@ -32,7 +32,7 @@ class SupplyController extends Controller
                 'contact_three_number' => $request->input('c3_number'),
                 'created_at' => $created_at
             ]);
-            return redirect()->route('supplier_add');
+            return redirect()->route('suppliers_index')->with('success', 'Successfuly added!');
         }
         return view('add_supplier');
     }

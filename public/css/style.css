@@ -11,3 +11,7 @@ h3{
 .btn{
     float: right;
 }
+.jumbotron{
+    padding-top:2rem !important;
+    padding-bottom:2rem !important;
+}

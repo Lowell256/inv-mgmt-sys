@@ -23,7 +23,7 @@ class OrdersController extends Controller
                 'email' => $request->input('email'),
                 'created_at' => $created_at
             ]);
-            return redirect()->route('regular_add');
+            return redirect()->route('regulars_index')->with('success', 'Successfuly added!');
         }
         return view('add_regular');
     }
